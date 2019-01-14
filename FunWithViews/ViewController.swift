@@ -34,7 +34,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideDie()
         hideRollsResults()
         print("total rolls : \(totalRolls)")
     }
@@ -46,7 +45,6 @@ class ViewController: UIViewController {
         hideDie()
         rearrangeDie(roll: currentRoll)
         fillResults(roll: currentRoll)
-        print("currentRoll = \(currentRoll)")
     }
     
     // Returns back a random Int (1, 2, 3, 4, 5, or 6)
@@ -59,28 +57,33 @@ class ViewController: UIViewController {
         switch totalRolls {
         case 1:
             rollOne.text = "\(currentRoll)"
+            rollOne.textAlignment = .center
             rollOne.isHidden = false
-            print("roll label hit :: \(roll)")
         case 2:
             rollTwo.text = "\(currentRoll)"
+            rollTwo.textAlignment = .center
             rollTwo.isHidden = false
-            print("roll label hit :: \(roll)")
         case 3:
             rollThree.text = "\(currentRoll)"
+            rollThree.textAlignment = .center
             rollThree.isHidden = false
-            print("roll label hit :: \(roll)")
         case 4:
             rollFour.text = "\(currentRoll)"
+            rollFour.textAlignment = .center
             rollFour.isHidden = false
-            print("roll label hit :: \(roll)")
         case 5:
             rollFive.text = "\(currentRoll)"
+            rollFive.textAlignment = .center
             rollFive.isHidden = false
-            print("roll label hit :: \(roll)")
         case 6:
             rollSix.text = "\(currentRoll)"
+            rollSix.textAlignment = .center
             rollSix.isHidden = false
-            print("roll label hit :: \(roll)")
+        case 7:
+            totalRolls = 0
+            hideDie()
+            hideRollsResults()
+            print("totaRolls reset")
         default:
             hideRollsResults()
         }
@@ -113,25 +116,25 @@ class ViewController: UIViewController {
         switch roll {
         case 1:
             viewFive.isHidden = false
-            print("rolled \(roll)!")
+            print("rolled \(currentRoll)!")
             print("total rolls : \(totalRolls) \n---------------")
         case 2:
             viewOne.isHidden = false
             viewNine.isHidden = false
-            print("rolled \(roll)!")
+            print("rolled \(currentRoll)!")
             print("total rolls : \(totalRolls) \n---------------")
         case 3:
             viewOne.isHidden = false
             viewFive.isHidden = false
             viewNine.isHidden = false
-            print("rolled \(roll)!")
+            print("rolled \(currentRoll)!")
             print("total rolls : \(totalRolls) \n---------------")
         case 4:
             viewOne.isHidden = false
             viewThree.isHidden = false
             ViewSev.isHidden = false
             viewNine.isHidden = false
-            print("rolled \(roll)!")
+            print("rolled \(currentRoll)!")
             print("total rolls : \(totalRolls) \n---------------")
         case 5:
             viewOne.isHidden = false
@@ -139,7 +142,7 @@ class ViewController: UIViewController {
             viewFive.isHidden = false
             ViewSev.isHidden = false
             viewNine.isHidden = false
-            print("rolled \(roll)!")
+            print("rolled \(currentRoll)!")
             print("total rolls : \(totalRolls) \n---------------")
         case 6:
             viewOne.isHidden = false
@@ -148,7 +151,7 @@ class ViewController: UIViewController {
             viewSix.isHidden = false
             ViewSev.isHidden = false
             viewNine.isHidden = false
-            print("rolled \(roll)!")
+            print("rolled \(currentRoll)!")
             print("total rolls : \(totalRolls) \n---------------")
         default:
             viewOne.isHidden = true
